@@ -71,7 +71,6 @@ async function fetchMovieDetails(movieId) {
 }
 
 // 6. Mostrar modal con detalles
-// 6. Mostrar modal con detalles
 function showMovieDetails(movie) {
     const modal = document.createElement('div');
     modal.classList.add('modal-overlay');
@@ -107,13 +106,6 @@ function showMovieDetails(movie) {
         modal.remove();
     });
 
-    // Evento para cerrar el modal al hacer clic fuera del contenido
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            console.log("Cerrando modal por clic fuera..."); // Verifica si se ejecuta
-            modal.remove();
-        }
-    });
 }
 
 
