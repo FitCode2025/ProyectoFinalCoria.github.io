@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Películas</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Librerías (optimizadas) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>CineMatch</h1>
+        
+        <!-- Mejorado: Contenedor de búsqueda accesible -->
+        <div class="search-container">
+            <label for="searchInput" class="visually-hidden">Buscar películas</label>
+            <input type="text" 
+                   id="searchInput" 
+                   placeholder="Buscar películas..."
+                   aria-label="Campo de búsqueda de películas">
+            <button id="searchBtn" aria-label="Buscar películas">Buscar</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Contenedor principal de películas -->
+        <section aria-labelledby="moviesHeading" class="movies-section">
+            <h2 id="moviesHeading" class="visually-hidden">Listado de películas</h2>
+            <div id="moviesContainer" class="movies-container"></div>
+        </section>
+
+        <!-- Sección de gráfica -->
+        <section aria-labelledby="chartHeading" class="chart-section">
+            <h2 id="chartHeading">Distribución de Calificaciones</h2>
+            <div class="chart-container">
+                <canvas id="ratingsChart" aria-label="Gráfico de calificaciones de películas"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal (mejorado) -->
+    <div id="movieModal" class="movie-modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <button class="close-btn" aria-label="Cerrar ventana">&times;</button>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
